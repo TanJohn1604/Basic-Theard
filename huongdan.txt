@@ -1,0 +1,4 @@
+main: tao thread
+main2: tao thread voi 1 arguments
+main3: tao thread voi nhieu arguments thông qua struct
+main4: tao thread va nhận lại giá trị trả về từ thread
