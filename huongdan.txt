@@ -2,3 +2,12 @@ main: tao thread
 main2: tao thread voi 1 arguments
 main3: tao thread voi nhieu arguments thông qua struct
 main4: tao thread va nhận lại giá trị trả về từ thread
+main5:đọc id thread được tạo ra
+
+/*hàm này sẽ đứng đợi khi thread nó chạy xong thì main
+mới chạy tiếp*/
+pthread_join(thread,NULL);
+
+/*hàm này sẽ thoát khỏi main thread nhưng những 
+thread tạo từ main vẫn sẽ chạy đến khi hoàn tất*/
+pthread_exit(NULL);
