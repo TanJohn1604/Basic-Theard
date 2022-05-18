@@ -3,6 +3,30 @@ main2: tao thread voi 1 arguments
 main3: tao thread voi nhieu arguments thông qua struct
 main4: tao thread va nhận lại giá trị trả về từ thread
 main5:đọc id thread được tạo ra
+main6: tạo 2 thread cùng chạy 1 hàm, sử dụng lock và unlock để cho thread đầu chạy hết thì 
+thread tiếp theo mới nhảy vào hàm chạy tiếp, để các biểu thức liên quan tới biến global bên
+trong lock va unlock.
+-   DEADLOCK là khi 2 thread chạy 2 hàm khác nhau A B
+khi thread1 vào hàm A lock1 đồng thời thread2 vào hàm  B lock2.
+khiến thread1 đợi ở lock2, thread2 đợi ở lock1. vì lock1 lock2 chưa unlock nên 
+gây ra DEADLOCK
+
+A ()
+lock1
+instruction...
+lock2
+instruction...
+unlock2
+unlock1
+
+B ()
+lock2
+instruction...
+lock1
+instruction...
+unlock1
+instruction...
+unlock2
 
 /*hàm này sẽ đứng đợi khi thread nó chạy xong thì main
 mới chạy tiếp*/
